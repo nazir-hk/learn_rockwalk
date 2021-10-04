@@ -1,0 +1,11 @@
+<launch>
+
+    <node pkg="joy" type="joy_node" name="joy_node" output="screen">
+        <param name="~autorepeat_rate" value="0" />
+    </node>
+
+    <node pkg="rnw_ros" type="gamepad_trigger_node" name="gamepad_trigger_node" output="screen">
+
+    </node>
+
+</launch>

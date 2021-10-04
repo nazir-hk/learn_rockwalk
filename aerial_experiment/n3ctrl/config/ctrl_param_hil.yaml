@@ -1,0 +1,97 @@
+mass        : 1
+gra         : 9.81
+hov_percent : 0.32
+full_thrust : 100 # this one is not used
+ctrl_rate   : 100.0
+js_ctrl_lock_velo: 0.3
+use_yaw_rate_ctrl: false
+pub_debug_msgs: true
+
+enable_dynamic_reconfigure: true
+
+# disturbances are measured and controlled through the integral term in velocity loop
+# x/y/z_limit's unit is Newton(N)
+disturbance:
+  x_limit: 20
+  y_limit: 20
+  z_limit: 20
+  err_limit_x: 1
+  err_limit_y: 1
+  err_limit_z: 1
+  integration_ratio: 0.02
+
+disarm:
+  enable: true
+  max_height: 0.2
+
+wait_before_take_off: 3
+
+hover:
+    set_hov_percent_to_zero: false
+    use_hov_percent_kf: true
+    vert_velo_limit_for_update: 0.2
+    vert_height_limit_for_update: 0.2
+    percent_lower_limit: 0.30
+    percent_higher_limit: 0.45
+
+indi_lpf: 0.001
+
+gain:
+    hover:
+        # Controller gain in minimun snap
+        Kp0: 2.3
+        Kp1: 2.3
+        Kp2: 2.5
+        Kv0: 2.5
+        Kv1: 2.5
+        Kv2: 5.5
+        Kvi0: 1.0
+        Kvi1: 1.0
+        Kvi2: 1.0
+        Ka0: 0.0
+        Ka1: 0.0
+        Ka2: 0.0
+        Kyaw: 20.0
+        Kap0: 1.0
+        Kap1: 1.0
+        Kap2: 1.0
+    track:
+        Kp0: 2.3
+        Kp1: 2.3
+        Kp2: 2.5
+        Kv0: 3.0 
+        Kv1: 2.5 
+        Kv2: 5.5
+        Kvi0: 0.1
+        Kvi1: 0.1
+        Kvi2: 0.1
+        Ka0: 0.0
+        Ka1: 0.0
+        Ka2: 0.0
+        Kyaw: 20.0
+        Kap0: 1.0
+        Kap1: 1.0
+        Kap2: 1.0
+
+idling:
+    desired_height_limit:   -1.10
+    desired_velo_limit:     0.10
+    feedback_velo_limit:    0.10
+    js_thrust_limit:        0.1
+    landing_timeout:        1.0
+    landing_thrust_percent: 0.6
+    lowest_thrust:          0.05
+
+rc:
+    hori_velo_scale:   1.0
+    vert_velo_scale:   1.0
+    # rad 30~0.523 45~0.785 60~1.047
+    yaw_scale:         0.523
+    attitude_scale:    0.523
+    deadzone:          0.1
+    exit_cmd_deadzone: 0.2
+
+msg_timeout:
+    odom: 0.5
+    rc:   0.2
+    cmd:  0.5

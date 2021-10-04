@@ -52,7 +52,7 @@ Our implementation employs a feedback control strategy for sustainable rock-and-
 * [**rosserial**](http://wiki.ros.org/rosserial) to acquire data from [Arduino 9 Axis Motion Shield](https://store.arduino.cc/usa/9-axis-motion-shield)
 
 #### Quadrotor
-TODO
+See `aerial_experiment` subdirectory for information regarding the quadrotor implementation.
 
 
 ## 3. Quick Start: Object Transport with Learned Policy in Simulation

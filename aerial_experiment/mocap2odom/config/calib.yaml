@@ -1,0 +1,10 @@
+drone1:
+  T_MARKER_FLU:
+    x: 0
+    y: 0
+    z: -0.045
+drone2:
+  T_MARKER_FLU:
+    x: 0
+    y: 0
+    z: -0.045
